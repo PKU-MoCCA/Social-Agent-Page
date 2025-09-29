@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"> 
+  
+  <meta property="og:title" content="Social Agent: Mastering Dyadic Nonverbal Behavior Generation via Conversational LLM Agents"/>
+  <meta property="og:url" content=""/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="google-site-verification" content="c-OO9s8QGRGOjdJTz3dyfcYlgskfbLXnwRRAzQLcoWw" />
+
+  <title>Social Agent</title>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+  <link rel="icon" href="static/figures/icon2.png">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+
+<!-- paper -->
+<section class="publication-header">
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <!-- <div class="columns is-centered"> -->
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Social Agent: Mastering Dyadic Nonverbal Behavior Generation via Conversational LLM Agents</h1>
+          <div class="is-size-3 publication-authors">
+            SIGGRAPH ASIA 2025
+          </div>
+          <!-- <div class="is-size-4 publication-authors">
+            <a href="https://blog.siggraph.org/2023/07/siggraph-2023-technical-papers-awards-best-papers-honorable-mentions-and-test-of-time.html/" target="_blank"> (Best Paper Honorable Mention)
+          </div> -->
+        </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- authors -->
+<section class="publication-author-block">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://lumen-ze.github.io" target="_blank">Zeyi Zhang</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://zyj.cool/" target="_blank">Yanju Zhou</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://heyuanyao-pku.github.io/" target="_blank">Heyuan Yao</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://aubrey-ao.github.io/" target="_blank">Tenglong Ao</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://" target="_blank">Xiaohang Zhan</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://libliu.info/" target="_blank">Libin Liu</a><sup>1✉</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Peking University, China<sup>1</sup>,</span> 
+            <span class="author-block">Tencent, China<sup>2</sup>,</span> 
+            <span class="eql-cntrb">
+              <!--<small><br><sup>*</sup>indicates equal contribution</small>-->
+              <small><sup>✉</sup>corresponding author</small></span>
+          </div>
+          
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2405.09814" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+            
+              <span class="link-block">
+                <a href="https://github.com/LuMen-ze/Semantic-Gesticulator-Official" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://github.com/LuMen-ze/Semantic-Gesticulator-Official" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fa fa-database"></i>
+                </span>
+                <span>Dataset</span>
+              </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=gKGqCE7id4U"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+
+              <!-- </span> -->
+              <!-- Colab Link. -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- teaser -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+
+      <div class="column is-centered has-text-centered">
+        <img src="static/figures/sga25/teaser.png" alt="cars peace"/>
+      </div>
+     
+      <h2 class="subtitle has-text-centered">
+        <span>Our system generates natural and context-aware dyadic nonverbal behaviors via LLM-guided interaction control and dual-person gesture synthesis.</span>
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present <i>Social Agent</i>, a novel framework for synthesizing realistic and
+            contextually appropriate co-speech nonverbal behaviors in dyadic conversations.
+            In this framework, we develop an agentic system driven by a Large
+            Language Model (LLM) to direct the conversation flow and determine appropriate
+            interactive behaviors for both participants. Additionally, we propose
+            a novel dual-person gesture generation model based on an auto-regressive
+            diffusion model, which synthesizes coordinated motions from speech signals.
+            The output of the agentic system is translated into high-level guidance for
+            the gesture generator, resulting in realistic movement at both the behavioral
+            and motion levels. Furthermore, the agentic system periodically examines
+            the movements of interlocutors and infers their intentions, forming a continuous
+            feedback loop that enables dynamic and responsive interactions
+            between the two participants. User studies and quantitative evaluations
+            show that our model significantly improves the quality of dyadic interactions,
+            producing natural, synchronized nonverbal behaviors. We will release
+            the code and prompts for academic research.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<!-- 
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="column is-centered has-text-centered">
+        <img src="static/figures/system_overview_00.jpg" alt="cars peace"
+        width="500"/>
+      </div>
+  </div>
+</div>
+</section> -->
+
+<!-- overview -->
+<section class="hero is-small">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <br>
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">System Overview</h2>
+            <div class="column is-centered has-text-centered">
+              <img src="static/figures/sga25/overview.png" alt="cars peace"
+              width="500"/>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Our goal is to synthesize full-body motion sequences for two interlocutors 
+            in a dyadic conversation, driven by their audio \((S^{\mathrm{I}}, S^{\mathrm{II}})\). 
+            The motion sequences, denoted as \((M^{\mathrm{I}}, M^{\mathrm{II}})\), 
+            each consists of a number of frames \(M = [m_t]\), where each 
+            frame \(m_t \in \mathbb{R}^{(J \times Q + G)}\) encodes both joint-level and 
+            global pose information. Here, \(J\), \(Q\), and \(G\) denote the number 
+            of joints, joint feature dimension, and global root feature dimension, respectively.
+            
+          </p>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Our approach consists of three key components. First, we present
+            a dyadic motion generation model that effectively synthesizes
+            coordinated dyadic motions from speech inputs. Then we introduce our LLM-based Social Agent System which can
+            derive contextual interaction constraints between two interlocutors
+            through speech and instruction inputs. Finally, we introduce our
+            training-free motion control mechanism that integrates
+            these interaction constraints to guide the motion generation, significantly
+            enhancing the naturalism and awareness of dyadic nonverbal
+            behaviors.
+          </p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <!--/ Abstract. -->
+  </div>
+</section> 
+
+<!-- <section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Semantic Gestures Synthesis</h2>
+        <div class="content has-text-justified">
+          <p>
+            Our system successfully creates realistic gestures that accurately convey the intended meanings, aligning with the respective retrieval results. The character performs a range of semantic gestures, including natural body movements, reasonable arm swings, and delicate finger gesticulations. Here are some results:
+          </p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-body">
+    <div class="column is-centered has-text-centered">
+    <h3 class="title is-4">Short Sample Results</h3>
+      <div id="results-carousel" class="carousel results-carousel">
+      <div class="column is-centered has-text-centered">
+        <p><b>Text Prompt: “the person is <font color="red">angry</font>.”</b></p>
+
+                <video poster="" id="tree"  width=300>
+          <source src="static/figures/text_prompt/angry.mp4"
+          type="video/mp4">
+        </video>
+      </div>
+      <div class="column is-centered has-text-centered">
+      	<p><b> Text Prompt: “the person is <font color="red">happy</font> and <font color="red">excited</font>.”</b></p>
+
+                <video poster="" id="tree"  controls width=300>
+          <source src="static/figures/text_prompt/happy.mp4"
+          type="video/mp4">
+        </video>
+      </div>
+        <div class="column is-centered has-text-centered">
+      	<p><b> Text Prompt: “the person is <font color="red">sad</font>.”</b></p>
+
+                <video poster="" id="tree"  controls width=300>
+          <source src="static/figures/text_prompt/sad.mp4"
+          type="video/mp4">
+        </video>
+      </div>
+            <div class="column is-centered has-text-centered">
+      	<p><b> Text Prompt: “a person is <font color="red">holding a cup of coffee in the right hand</font>.”</b></p>
+
+                <video poster="" id="tree"  controls width=300>
+          <source src="static/figures/text_prompt/hold.mp4"
+          type="video/mp4">
+        </video>
+      </div>
+            <div class="column is-centered has-text-centered">
+      	<p><b> Text Prompt: “the person is <font color="red">playing the guitar</font>.”</b></p>
+
+                <video poster="" id="tree"  controls width=300>
+          <source src="static/figures/text_prompt/guitar.mp4"
+          type="video/mp4">
+        </video>
+      </div>
+            <div class="column is-centered has-text-centered">
+      	<p><b> Text Prompt: “standing like a <font color="red">boxer</font>.”</b></p>
+
+                <video poster="" id="tree"  controls width=300>
+          <source src="static/figures/text_prompt/boxer.mp4"
+          type="video/mp4">
+        </video>
+  </div>
+</div>
+</div>
+
+  <div class="hero-body">
+    <div class="column is-centered has-text-centered">
+    <h3 class="title is-4">Long Sample Results</h3>
+    <p><b> (The left video is the video prompt, and the right video shows the results.)</b></p>
+
+    <div id="results-carousel" class="carousel results-carousel">
+        
+      <div class="column is-centered has-text-centered">
+            <video poster="" id="tree" muted controls width=300>
+              <source src="static/figures/video_prompt/hiphop.mp4"
+              type="video/mp4">
+            </video>
+            <video poster="" id="tree"  controls width=300>
+              <source src="static/figures/video_prompt/hiphop-video-prompt.mp4"
+              type="video/mp4">
+            </video>
+            <p><b>Video Prompt: “a dance of <font color="red">hip-hop style</font>.”</b></p>
+            </br>
+      </div>
+
+      <div class="column is-centered has-text-centered">
+        <video poster="" id="tree" muted controls width=300>
+          <source src="static/figures/video_prompt/yoga1.mp4"
+          type="video/mp4">
+        </video>
+        <video poster="" id="tree"  controls width=300>
+          <source src="static/figures/video_prompt/yoga1_final_0001-0463.mp4"
+          type="video/mp4">
+        </video>
+        <p><b>Video Prompt: “a <font color="red">yoga</font> gesture.”</b></p>
+        </br>
+      </div>
+
+      <div class="column is-centered has-text-centered">
+            <video poster="" id="tree" muted controls width=300>
+              <source src="static/figures/video_prompt/yoga.mp4"
+              type="video/mp4">
+            </video>
+            <video poster="" id="tree"  controls width=300>
+              <source src="static/figures/video_prompt/yoga2_final_0001-0463.mp4"
+              type="video/mp4">
+            </video>
+            <p><b>Video Prompt: “a <font color="red">yoga</font> gesture.”</b></p>
+            </br>
+      </div>
+
+      <div class="column is-centered has-text-centered">
+            <video poster="" id="tree" muted controls width=300>
+              <source src="static/figures/video_prompt/bird.mp4"
+              type="video/mp4">
+            </video>
+            <video poster="" id="tree"  controls width=300>
+              <source src="static/figures/video_prompt/bird_final1_0001-0445.mp4"
+              type="video/mp4">
+            </video>
+            <p><b>Video Prompt: “a bird <font color="red">flaps wings</font> in flight.”</b></p>
+            </br>
+      </div>
+
+      <div class="column is-centered has-text-centered">
+        <video poster="" id="tree" muted controls width=300>
+          <source src="static/figures/video_prompt/wind.mp4"
+          type="video/mp4">
+        </video>
+        <video poster="" id="tree"  controls width=300>
+          <source src="static/figures/video_prompt/wind_video.mp4"
+          type="video/mp4">
+        </video>
+        <p><b>Video Prompt: “trees <font color="red">sway</font> with the wind.”</b></p>
+        </br>
+      </div>
+
+      <div class="column is-centered has-text-centered">
+        <video poster="" id="tree" muted controls width=300>
+          <source src="static/figures/video_prompt/fire.mp4"
+          type="video/mp4">
+        </video>
+        <video poster="" id="tree"  controls width=300>
+          <source src="static/figures/video_prompt/fire_final_new0001-0438.mp4"
+          type="video/mp4">
+        </video>
+        <p><b>Video Prompt: “flames <font color="red">burn</font> in the fireplace.”</b></p>
+        </br>
+      </div>
+
+      <div class="column is-centered has-text-centered">
+        <video poster="" id="tree" muted controls width=300>
+          <source src="static/figures/video_prompt/dinosaur.mp4"
+          type="video/mp4">
+        </video>
+        <video poster="" id="tree"  controls width=300>
+          <source src="static/figures/video_prompt/dinosaur_final_0001-0438.mp4"
+          type="video/mp4">
+        </video>
+        <p><b>Video Prompt: “a standing <font color="red">dinosaur</font>.”</b></p>
+        </br>
+      </div>
+
+      <div class="column is-centered has-text-centered">
+        <video poster="" id="tree" muted controls width=170>
+          <source src="static/figures/video_prompt/lightning.mp4"
+          type="video/mp4">
+        </video>
+        <video poster="" id="tree"  controls width=300>
+          <source src="static/figures/video_prompt/lightning_final_0001-0445.mp4"
+          type="video/mp4">
+        </video>
+        <p><b>Video Prompt: “<font color="red">lightning</font> descends from the sky.”</b></p>
+        </br>
+      </div>
+</div>
+</div>
+</section> -->
+
+<!-- sample demo -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Dyadic Nonverbal Behavior Generation</h2>
+        <div class="content has-text-justified">
+          <p>
+            Our system successfully synthesizes high-quality, realistic dyadic interactions,
+            enhancing the naturalness and coherence of dialogue scenarios.
+          </p>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-body">
+      <div class="column is-centered has-text-centered">
+        <h3 class="title is-4">Sample Results</h3>
+        <div id="results-carousel" class="carousel results-carousel">
+        <div class="column is-centered has-text-centered">
+                  <video poster="" id="s1" controls  width=700>
+            <source src="static/figures/sga25/demo/result1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+  
+        <div class="column is-centered has-text-centered">
+                  <video poster="" id="s2" controls  width=700>
+            <source src="static/figures/sga25/demo/result2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+  
+        <div class="column is-centered has-text-centered">
+                  <video poster="" id="s3"  controls width=700>
+            <source src="static/figures/sga25/demo/result3.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  
+    <div class="column is-centered has-text-centered">
+      <h3 class="title is-4">Comparison</h3>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="column is-centered has-text-centered">
+                  <video poster="" id="l1" controls  width=700>
+            <source src="static/figures/sga25/demo/comparison1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-centered has-text-centered">
+                  <video poster="" id="l2" controls  width=700>
+            <source src="static/figures/sga25/demo/comparison2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <div class="column is-centered has-text-centered">
+      <h3 class="title is-4">Ablation</h3>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="column is-centered has-text-centered">
+                  <video poster="" id="l1" controls  width=700>
+            <source src="static/figures/sga25/demo/ablation1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-centered has-text-centered">
+                  <video poster="" id="l2" controls  width=700>
+            <source src="static/figures/sga25/demo/ablation2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section> 
+
+
+
+
+<!-- bibtex info -->
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+<pre><code>
+@article{zhang2024socialAgent,
+  title={Social Agent: Mastering Dyadic Nonverbal Behavior Generation via Conversational LLM Agents},
+  author={Zhang, Zeyi and Zhou, Yanju and Yao, Heyuan and Ao, Tenglong and Zhan, Xiaohang and Liu, Libin},
+  journal={ACM Transactions on Graphics (TOG)},
+  volume={43},
+  number={4},
+  pages={1--17},
+  year={2025},
+  publisher={ACM New York, NY, USA}
+}
+</code></pre>
+    </div>
+</section>
+
+
+</body>
+
+
+<footer class="footer">
+ <!--  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+      href="https://homes.cs.washington.edu/~kpar/nerfies/videos/nerfies_paper.pdf">
+      <i class="fas fa-file-pdf"></i>
+    </a>
+    <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+      <i class="fab fa-github"></i>
+    </a>
+  </div> -->
+  <div class="columns is-centered">
+    <div class="column is-8">
+      <div class="content">
+        <p>
+          This website is licensed under a <a rel="license"
+          href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+        Commons Attribution-ShareAlike 4.0 International License</a>.
+      </p>
+      <p>
+        Website source code based on the <a href="https://nerfies.github.io/"> Nerfies</a> project page. If you want to reuse their <a
+        href="https://github.com/nerfies/nerfies.github.io">source code</a>, please credit them appropriately.
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+</footer>
+
+
+  <script type="text/javascript">
+    var sc_project=12351448; 
+    var sc_invisible=1; 
+    var sc_security="c676de4f"; 
+  </script>
+  <script type="text/javascript"
+  src="https://www.statcounter.com/counter/counter.js"
+  async></script>
+  <noscript><div class="statcounter"><a title="Web Analytics"
+    href="https://statcounter.com/" target="_blank"><img
+    class="statcounter"
+    src="https://c.statcounter.com/12351448/0/c676de4f/1/"
+    alt="Web Analytics"></a></div></noscript>
+    <!-- End of Statcounter Code -->
+
+</html>
