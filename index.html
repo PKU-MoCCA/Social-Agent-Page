@@ -65,7 +65,7 @@
             <span class="author-block"><a href="https://zyj.cool/" target="_blank">Yanju Zhou</a><sup>1</sup>,</span>
             <span class="author-block"><a href="https://heyuanyao-pku.github.io/" target="_blank">Heyuan Yao</a><sup>1</sup>,</span>
             <span class="author-block"><a href="https://aubrey-ao.github.io/" target="_blank">Tenglong Ao</a><sup>1</sup>,</span>
-            <span class="author-block"><a href="https://" target="_blank">Xiaohang Zhan</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://xiaohangzhan.github.io/" target="_blank">Xiaohang Zhan</a><sup>2</sup>,</span>
             <span class="author-block"><a href="https://libliu.info/" target="_blank">Libin Liu</a><sup>1✉</sup></span>
           </div>
 
@@ -87,7 +87,7 @@
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>arXiv (TBD)</span>
                 </a>
               </span>
 
@@ -98,17 +98,7 @@
                 <span class="icon">
                   <i class="fab fa-github"></i>
                 </span>
-                <span>Code</span>
-              </a>
-              </span>
-
-              <span class="link-block">
-                <a href="https://github.com/LuMen-ze/Semantic-Gesticulator-Official" target="_blank"
-                class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                  <i class="fa fa-database"></i>
-                </span>
-                <span>Dataset</span>
+                <span>Code (TBD)</span>
               </a>
               </span>
 
@@ -118,7 +108,7 @@
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
                   </span>
-                  <span>Video</span>
+                  <span>Video (TBD)</span>
                 </a>
               </span>
 
@@ -157,25 +147,18 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
 
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">Brief Introduction</h2>
         <div class="content has-text-justified">
           <p>
-            We present <i>Social Agent</i>, a novel framework for synthesizing realistic and
-            contextually appropriate co-speech nonverbal behaviors in dyadic conversations.
-            In this framework, we develop an agentic system driven by a Large
-            Language Model (LLM) to direct the conversation flow and determine appropriate
-            interactive behaviors for both participants. Additionally, we propose
-            a novel dual-person gesture generation model based on an auto-regressive
-            diffusion model, which synthesizes coordinated motions from speech signals.
-            The output of the agentic system is translated into high-level guidance for
-            the gesture generator, resulting in realistic movement at both the behavioral
-            and motion levels. Furthermore, the agentic system periodically examines
-            the movements of interlocutors and infers their intentions, forming a continuous
-            feedback loop that enables dynamic and responsive interactions
-            between the two participants. User studies and quantitative evaluations
-            show that our model significantly improves the quality of dyadic interactions,
-            producing natural, synchronized nonverbal behaviors. We will release
-            the code and prompts for academic research.
+            Nonverbal behaviors are essential for natural and expressive human communication, conveying emotions, 
+            intentions, and social dynamics beyond words. However, modeling dyadic nonverbal interactions remains 
+            a major challenge due to their multiscale complexity — from subtle gaze and gestures to high-level 
+            social cues like mimicry and engagement. Current data-driven approaches often fail to capture sparse 
+            but crucial social signals that shape authentic interactions. To address this, we propose Social Agent, an 
+            LLM-powered agentic framework that integrates psychological knowledge and conversational 
+            reasoning into motion synthesis. Our system dynamically analyzes social context and generates 
+            context-aware, bidirectional nonverbal behaviors, bridging high-level intentions with low-level 
+            embodied motion for realistic dyadic interaction generation.
           </p>
         </div>
       </div>
@@ -186,7 +169,7 @@
 
 
 <!-- 
-<section class="hero is-small">
+<section class="hero is-small results-section">
   <div class="hero-body">
     <div class="container">
       <div class="column is-centered has-text-centered">
@@ -234,6 +217,8 @@
             enhancing the naturalism and awareness of dyadic nonverbal
             behaviors.
           </p>
+          <br>
+          <br>
         </div>
     </div>
     <br>
@@ -426,10 +411,32 @@
 </div>
 </section> -->
 
-<!-- sample demo -->
+<!-- agent system -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">LLM-based Social Agent System</h2>
+        <div class="column is-centered has-text-centered">
+          <img src="static/figures/sga25/sa.png" alt="LLM-based Social Agent System" width="700"/>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Our approach leverages an LLM-based agentic system, to derive contextual interaction constraints for nonverbal behavior generation in dyadic conversation scenarios. This system is designed to act as a <em>Director</em> and provide high-level guidance for nonverbal behavior by analyzing multimodal inputs and instruction prompts. As shown in the figure, the system comprises two main components: the <em>Scene Designer Agent</em>, which operates before the initial round to analyze the dialogue and determine the initial proxemic setup, and the <em>Dynamic Controller Agent</em>, which is activated at the beginning of each round to analyze the current state, interpret the intentions of the interlocutors and determine the appropriate interactive behaviors for them. All modules in the Agent system are built into the prompt design method, using carefully tailored prompts based on relevant linguistic and human behavioral research.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- sample demo -->
+<section class="hero is-small">
+  <div class="container is-max-desktop">
     <!-- Abstract. -->
+    <br>
+    <br>
+
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Dyadic Nonverbal Behavior Generation</h2>
@@ -490,7 +497,7 @@
     </div>
 
     <div class="column is-centered has-text-centered">
-      <h3 class="title is-4">Ablation</h3>
+      <h3 class="title is-4">Ablation Study</h3>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="column is-centered has-text-centered">
                   <video poster="" id="l1" controls  width=700>
@@ -511,6 +518,33 @@
   </div>
 </section> 
 
+<!-- agent intermediates -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Intermediate Reasoning Outputs of the Social Agent System</h2>
+        <figure class="has-text-centered">
+          <img src="static/figures/sga25/sda_res.png" alt="Scene Designer intermediate outputs" width="700"/>
+        </figure>
+        <div class="content has-text-justified">
+          <p>
+            We showcase the Scene Designer workflow, which extracts scene context and generates the initial proxemic setup. The blue character is Character I, and the green character is Character II. The examples showcase the framework’s scene analysis and understanding capabilities, illustrating how it designs realistic and contextually appropriate initial proxemic setups for different scenarios. This facilitates subsequent interaction control by the Dynamic Controller Agent module, ensuring more natural and context-aware interactions.
+          </p>
+        </div>
+        <figure class="has-text-centered">
+          <img src="static/figures/sga25/case_example.png" alt="Dynamic Controller reasoning outputs" width="400"/>
+        </figure>
+        <div class="content has-text-justified">
+          <p>
+            We also illustrate the Dynamic Controller Agent’s ability to perform complex spatial reasoning by interpreting textual inputs to generate fine-grained spatial predictions. In the input, red text highlights the current spatial state of both characters, while the accompanying 3D visualization on the right depicts the configuration but is not part of the model’s input. In the output, blue text emphasizes the agent’s reasoning process—such as the inferred direction and distance of Character I’s movement. The displayed output is a concise version of the agent’s reasoning, retaining the most essential spatial information.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 
@@ -519,15 +553,20 @@
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
 <pre><code>
-@article{zhang2024socialAgent,
+@inproceedings{10.1145/3757377.3763879,
   title={Social Agent: Mastering Dyadic Nonverbal Behavior Generation via Conversational LLM Agents},
   author={Zhang, Zeyi and Zhou, Yanju and Yao, Heyuan and Ao, Tenglong and Zhan, Xiaohang and Liu, Libin},
-  journal={ACM Transactions on Graphics (TOG)},
-  volume={43},
-  number={4},
-  pages={1--17},
-  year={2025},
-  publisher={ACM New York, NY, USA}
+  year = {2025},
+  isbn = {979-8-4007-2137-3/2025/12},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3757377.3763879},
+  doi = {10.1145/3757377.3763879},
+  booktitle = {SIGGRAPH Asia 2025 Conference Papers},
+  articleno = {71},
+  numpages = {10},
+  location = {Hong Kong, Hong Kong},
+  series = {SA '25}
 }
 </code></pre>
     </div>
